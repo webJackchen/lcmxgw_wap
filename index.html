@@ -36,18 +36,18 @@
         </div>
     </div>
     <div class="section section3">
-        <div id="bigImg3" class="bigImg block"  data-rel="70">
+        <div id="bigImg3" class="bigImg block"  data-rel="40">
             <div class="item1" data-rel="-40rem,4.05rem,0rem,4.05rem"></div>
             <p class="item2"data-rel="8.1rem,-50rem,8.1rem,0rem">联创梦享企业管理中心</p>
             <p class="item3"data-rel="10.85rem,50rem,10.85rem,0rem">控股子公司及持股合作公司</p>
         </div>
-        <ul class="queue1 list1 block"  data-rel="67" data-rel1 = "-50rem,0rem">
+        <ul class="queue1 list1 block"  data-rel="8" data-rel1 = "-50rem,0rem">
             <li></li><li></li><li></li>
         </ul>
-        <ul class="queue1 list2 block"  data-rel="49" data-rel1 = "50rem,0rem">
+        <ul class="queue1 list2 block"  data-rel="5" data-rel1 = "50rem,0rem">
             <li></li><li></li><li></li><li></li>
         </ul>
-        <div class="txt block" data-rel="5"  data-rel="70">
+        <div class="txt block"  data-rel="10">
             <ul class="queue txt_list1" data-rel="40rem,0.1rem,0rem,0.1rem">
                 <li>物易联科技有限公司</li>
                 <li>家易居科技有限公司</li>
@@ -92,7 +92,7 @@
         var scrollfullPage = new $.MyScroll();
         var vh = document.documentElement.clientHeight;
         vh = vh<= 480 ? 480:(vh<=568 ? 800:1000);
-
+        console.log(vh)
         scrollfullPage.init({
             afterFnArr:[oneFn("after"),twoFn("after"),threeFn("after"),function(){alert("44进场")}],
             leaveFnArr:[oneFn("leave"),twoFn("leave"),threeFn("leave"),function(){alert("44出场")}]
@@ -199,12 +199,12 @@
                     queue1 = $(".section3 .queue1"),
                     block = $(".section3 .block");
 
-//                block.each(function(i,elem){
-//                    var T = $(elem).attr("data-rel");
-//                    $(elem).css({
-//                        marginTop:(T*vh/480) + "px"
-//                    })
-//                })
+                block.each(function(i,elem){
+                    var T = $(elem).attr("data-rel");
+                    $(elem).css({
+                        marginTop:(T*vh/480) + "px"
+                    })
+                })
 
                 bigLogo1Img.each(function(i,elem){
                     var dataArr = $(elem).attr("data-rel").split(",");

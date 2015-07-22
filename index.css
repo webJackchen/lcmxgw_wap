@@ -66,12 +66,12 @@ html, body,#page{width: 100%;height:100%;position: relative;overflow: hidden}
 .section2 .txt2{position:absolute;width:32.6rem;left:1.7rem;top:70rem;font-size:1.2rem;line-height: 2.6rem;text-align: left;}
 
 /*section3 style*/
-#bigImg3{width: 17.4rem;height: 12.85rem;margin: 0 auto;position: relative;margin-top: 70px;}
+#bigImg3{width: 17.4rem;height: 12.85rem;margin: 0 auto;position: relative;margin-top: 40px;}
 #bigImg3 .item1{position: absolute;width: 9.3rem;height: 7.7rem;left: 4.05rem;top: 0rem;background-image: url("img/section3_2.png");background-repeat:no-repeat;background-size: 100% 100%;}
 #bigImg3 p{position: absolute;width: 100%;text-align: center;font-size: 1.2rem;color: #333333;top: 10.85rem;left: 10rem;opacity: 0}
 #bigImg3 .item2{font-size: 1.5rem;font-style: italic;top: 8.1rem;left: -10rem;opacity: 0}
 
-.section3 .list1{position:relative;width: 21.3rem;height: 5.1rem;margin: 15px auto;left: -50rem;}
+.section3 .list1{position:relative;width: 21.3rem;height: 5.1rem;margin: 8px auto;left: -50rem;}
 .section3 .list2{position:relative;width: 30rem;height: 5.1rem;margin: 5px auto;left: 50rem;}
 .section3 .list1 li,.section3 .list2 li{width: 5.1rem;height: 5.1rem;background-repeat:no-repeat;background-size: 100% 100%;float: left;margin-left: 3rem;}
 .section3 .list1 li:nth-child(1){background-image: url("img/icon1.png");margin-left: 0rem;}
