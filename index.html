@@ -44,7 +44,8 @@
 </div>
 </body>
 <script type="text/javascript" src="jquery-1.9.1.min.js"></script>
-<script type="text/javascript" src="jq_touch.js"></script>
+<script type="text/javascript" src="test.js"></script>
+<!--<script type="text/javascript" src="jq_touch.js"></script>-->
 <script type="text/javascript">
     (function (doc, win) {
         var docEl = doc.documentElement,
@@ -60,14 +61,14 @@
     })(document, window);
     $(function(){
         var section = $("#page .section");
-        var scrollfullPage = new $.MyScroll();
+//        var scrollfullPage = new $.MyScroll();
         var vh = document.documentElement.clientHeight;
         vh = vh<= 480 ? 480:(vh<=568 ? 800:1000);
 
-        scrollfullPage.init({
-            afterFnArr:[oneFn("after"),function(){alert("22进场")},function(){alert("33进场")},function(){alert("44进场")}],
-            leaveFnArr:[oneFn("leave"),function(){alert("22出场")},function(){alert("33出场")},function(){alert("44出场")}]
-        });
+//        scrollfullPage.init({
+//            afterFnArr:[oneFn("after"),function(){alert("22进场")},function(){alert("33进场")},function(){alert("44进场")}],
+//            leaveFnArr:[oneFn("leave"),function(){alert("22出场")},function(){alert("33出场")},function(){alert("44出场")}]
+//        });
 
         function oneFn(status){
             return (function(){
