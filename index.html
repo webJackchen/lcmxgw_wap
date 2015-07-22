@@ -1,137 +1,128 @@
-<!-- HTML5 -->
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
-    <title>TouchEvent测试</title>
+    <title>联创梦享集团官网</title>
     <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta charset="gbk">
-    <style type="text/css">
-        html,body{height: 100%;overflow: hidden}
-    </style>
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
-<h2>TouchEvent测试</h2>
-<br />
-<div id="version" style="border:2px solid black;background-color:yellow"></div>
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<div id="result" style="border:2px solid red; color:red;">未触发事件！</div>
-<div id="test" style="border:2px solid red">
-    <ul>
-        <li id="li1">测试条目1</li>
-        <li id="li2">测试条目2</li>
-        <li id="li3">测试条目3</li>
-        <li id="li4">测试条目4</li>
-        <li id="li5">测试条目5</li>
-        <li id="li6">测试条目6</li>
-        <li id="li7">测试条目7</li>
-        <li id="li8">测试条目8</li>
-        <li id="li9">测试条目9</li>
-        <li id="li10">测试条目10</li>
-        <li id="li11">测试条目11</li>
-        <li id="li12">测试条目12</li>
-        <li id="li13">测试条目13</li>
-        <li id="li14">测试条目14</li>
-        <li id="li15">测试条目15</li>
-        <li id="li16">测试条目16</li>
-        <li id="li17">测试条目17</li>
-        <li id="li18">测试条目18</li>
-        <li id="li19">测试条目19</li>
-        <li id="li20">测试条目20</li>
-    </ul>
+<div id="page">
+    <div id="logo"></div>
+    <footer id="up">
+        <img  src="img/section1_3.png">
+    </footer>
+    <div class="section section1">
+        <div id="bigImg1" class="bigImg block" data-rel="61">
+            <div class="item1" data-rel="0rem,0rem,-1.85rem,5.85rem"></div>
+            <div class="item2" data-rel="0rem,9.5rem,-1.2rem,3.7rem"></div>
+            <div class="item3" data-rel="-5rem,4.75rem,0rem,4.75rem"></div>
+        </div>
+        <div class="txt block" data-rel="5">
+            <p class="queue txt1" data-rel="50rem,0,1rem,0">联创梦享企业管理中心</p>
+            <p class="queue txt2" data-rel="60rem,0,4.25rem,0">DEFSHARE</p>
+            <p class="queue txt3" data-rel="70rem,0,7.7rem,0"><img src="img/section1_2.png"/></p>
+        </div>
+        <p class="queue txt4" data-rel="-100rem,0,8.25rem,0">专注互联网，共享新财富!</p>
+    </div>
+    <div class="section section2">
+        <div id="bigImg2" class="bigImg block"  data-rel="61">
+            <div class="item1"/></div>
+            <div class="item2" data-rel="-0.05rem,2.65rem,-0.05rem,16.65rem"/></div>
+        </div>
+        <div class="txt block" data-rel="5">
+            <p class="queue txt1" data-rel="600,0,32,0">互联网产品建设领导品牌</p>
+            <p class="queue txt2" data-rel="900,0,102,0">联创梦享集团总部设立于四川成都，在上海、北京、深圳、成都、郑州等地均设有办事机构。中心立足互联网，致力于系统设备研发、互联网产品研发、互联网运营、全网品牌整合营销等领域，业务覆盖互联网金融、农业信息化、社区商业移动互联、智慧园区、智能家居、房地产、电子商务、环保等行业。旗下已拥有6家控股子公司与10家持股合作公司。</p>
+        </div>
+    </div>
+    <div class="section section3">
+
+    </div>
+    <div class="section section4">
+
+    </div>
 </div>
-
-<script type="text/javascript">
-    //全局变量，触摸开始位置
-    var startX = 0, startY = 0;
-
-    //touchstart事件
-    function touchSatrtFunc(evt) {
-        try
-        {
-            evt.preventDefault(); //阻止触摸时浏览器的缩放、滚动条滚动等
-
-            var touch = evt.touches[0]; //获取第一个触点
-            var x = Number(touch.pageX); //页面触点X坐标
-            var y = Number(touch.pageY); //页面触点Y坐标
-            //记录触点初始位置
-            startX = x;
-            startY = y;
-
-            var text = 'TouchStart事件触发：（' + x + ', ' + y + '）';
-            document.getElementById("result").innerHTML = text;
-        }
-        catch (e) {
-            alert('touchSatrtFunc：' + e.message);
-        }
-    }
-
-    //touchmove事件，这个事件无法获取坐标
-    function touchMoveFunc(evt) {
-        try
-        {
-            evt.preventDefault(); //阻止触摸时浏览器的缩放、滚动条滚动等
-            var touch = evt.touches[0]; //获取第一个触点
-            var x = Number(touch.pageX); //页面触点X坐标
-            var y = Number(touch.pageY); //页面触点Y坐标
-
-            var text = 'TouchMove事件触发：（' + x + ', ' + y + '）';
-
-            //判断滑动方向
-            if (y - startY > 0 && Math.abs(y - startY)>20) {
-                text += '<br/>下滑';
-            }else if(y - startY < 0 && Math.abs(y - startY)>20){
-                text += '<br/>上滑';
-            }
-
-            document.getElementById("result").innerHTML = text;
-        }
-        catch (e) {
-            alert('touchMoveFunc：' + e.message);
-        }
-    }
-
-    //touchend事件
-    function touchEndFunc(evt) {
-        try {
-            evt.preventDefault(); //阻止触摸时浏览器的缩放、滚动条滚动等
-
-            var text = 'TouchEnd事件触发';
-            document.getElementById("result").innerHTML = text;
-        }
-        catch (e) {
-            alert('touchEndFunc：' + e.message);
-        }
-    }
-
-    //绑定事件
-    function bindEvent() {
-        document.addEventListener('touchstart', touchSatrtFunc, false);
-        document.addEventListener('touchmove', touchMoveFunc, false);
-        document.addEventListener('touchend', touchEndFunc, false);
-    }
-
-    //判断是否支持触摸事件
-    function isTouchDevice() {
-        document.getElementById("version").innerHTML = navigator.appVersion;
-
-        try {
-            document.createEvent("TouchEvent");
-            alert("支持TouchEvent事件！");
-
-            bindEvent(); //绑定事件
-        }
-        catch (e) {
-            alert("不支持TouchEvent事件！" + e.message);
-        }
-    }
-
-    window.onload = isTouchDevice;
-</script>
 </body>
+<script type="text/javascript" src="jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="jq_touch.js"></script>
+<script type="text/javascript">
+    (function (doc, win) {
+        var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    docEl.style.fontSize = 20 * (clientWidth / 720) + 'px';
+                };
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+    $(function(){
+        var section = $("#page .section");
+        var scrollfullPage = new $.MyScroll();
+        var vh = document.documentElement.clientHeight;
+        vh = vh<= 480 ? 480:(vh<=568 ? 800:1000);
+
+        scrollfullPage.init({
+            afterFnArr:[oneFn("after"),function(){alert("22进场")},function(){alert("33进场")},function(){alert("44进场")}],
+            leaveFnArr:[oneFn("leave"),function(){alert("22出场")},function(){alert("33出场")},function(){alert("44出场")}]
+        });
+
+        function oneFn(status){
+            return (function(){
+                var bigLogoImg = $("#bigImg1 div");
+                var queue = $(".section1 .queue"),
+                     knock = 0,
+                     block = $(".section1 .block");
+
+                block.each(function(i,elem){
+                    var T = $(elem).attr("data-rel");
+                    $(elem).css({
+                        marginTop:(T*vh/480) + "px"
+                    })
+                })
+                bigLogoImg.each(function(i,elem){
+                    var dataArr = $(elem).attr("data-rel").split(",");
+                    var T, L,O;
+                    knock = i;
+                    T = (status == "after") ? dataArr[2]:dataArr[0];
+                    L = (status == "after") ? dataArr[3]:dataArr[1];
+                    O = (status == "after") ? 1:0;
+                    $(elem).animate({
+                        top:T,
+                        left:L,
+                        opacity:O
+                    },1500)
+                })
+
+                if(knock == bigLogoImg.length-1){
+                    queue.delay(700).each(function(j,elem){
+                        var dataArr =  $(elem).attr("data-rel").split(",");
+                        var T, L, O;
+                        T = (status == "after") ? dataArr[2]:dataArr[0];
+                        O = (status == "after") ? 1:0;
+                        if(j == 3){
+                            $(elem).animate({
+                                bottom: T ,
+                                opacity:O
+                            },1500,function(){
+                                knock = true;
+                            })
+                        }else{
+                            $(elem).animate({
+                                top: T ,
+                                opacity:O
+                            },1500,function(){
+                                knock = true;
+                            })
+                        }
+
+                    })
+
+                }
+            })
+        }
+    })
+</script>
 </html>

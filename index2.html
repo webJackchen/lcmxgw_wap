@@ -1,0 +1,113 @@
+<!-- HTML5 -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>TouchEvent测试</title>
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta charset="gbk">
+    <style type="text/css">
+        html,body{height: 100%;overflow: hidden}
+    </style>
+</head>
+<body>
+<h2>TouchEvent测试</h2>
+<br />
+<div id="version" style="border:2px solid black;background-color:yellow"></div>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<div id="test" style="border:2px solid red">
+    <ul>
+        <li id="li1">测试条目1</li>
+        <li id="li2">测试条目2</li>
+        <li id="li3">测试条目3</li>
+        <li id="li4">测试条目4</li>
+        <li id="li5">测试条目5</li>
+        <li id="li6">测试条目6</li>
+        <li id="li7">测试条目7</li>
+        <li id="li8">测试条目8</li>
+        <li id="li9">测试条目9</li>
+        <li id="li10">测试条目10</li>
+        <li id="li11">测试条目11</li>
+    </ul>
+</div>
+
+
+<script type="text/javascript">
+    (function(){
+        //全局变量，触摸开始位置
+        var startY = 0;
+        //touchstart事件
+        function touchSatrtFunc(evt) {
+            try
+            {
+                evt.preventDefault(); //阻止触摸时浏览器的缩放、滚动条滚动等
+
+                var touch = evt.touches[0]; //获取第一个触点
+                var y = Number(touch.pageY); //页面触点Y坐标
+                //记录触点初始位置
+                startY = y;
+
+            }
+            catch (e) {
+                alert('touchSatrtFunc：' + e.message);
+            }
+        }
+
+        //touchmove事件，这个事件无法获取坐标
+        function touchMoveFunc(evt) {
+            try
+            {
+                evt.preventDefault(); //阻止触摸时浏览器的缩放、滚动条滚动等
+                var touch = evt.touches[0]; //获取第一个触点
+                var y = Number(touch.pageY); //页面触点Y坐标
+                //判断滑动方向
+                if (y - startY > 0 && Math.abs(y - startY)>20) {
+                    console.log("下滑");
+                }else if(y - startY < 0 && Math.abs(y - startY)>20){
+                    console.log("上滑");
+                }
+            }
+            catch (e) {
+                alert('touchMoveFunc：' + e.message);
+            }
+        }
+
+        //touchend事件
+        function touchEndFunc(evt) {
+            try {
+                evt.preventDefault(); //阻止触摸时浏览器的缩放、滚动条滚动等
+            }
+            catch (e) {
+                alert('touchEndFunc：' + e.message);
+            }
+        }
+
+        //绑定事件
+        function bindEvent() {
+            document.addEventListener('touchstart', touchSatrtFunc, false);
+            document.addEventListener('touchmove', touchMoveFunc, false);
+            document.addEventListener('touchend', touchEndFunc, false);
+        }
+
+        //判断是否支持触摸事件
+        function isTouchDevice() {
+            try {
+                document.createEvent("TouchEvent");
+                bindEvent(); //绑定事件
+            }
+            catch (e) {
+                alert("不支持TouchEvent事件！" + e.message);
+            }
+        }
+    })(window);
+
+
+    window.onload = isTouchDevice;
+</script>
+</body>
+</html>
