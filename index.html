@@ -6,7 +6,7 @@
     <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="index.css">
 </head>
-<body>
+<body  onorientationchange="updateOrientation();">
 <div id="page">
     <div id="logo"></div>
     <footer id="up">
@@ -87,6 +87,17 @@
         win.addEventListener(resizeEvt, recalc, false);
         doc.addEventListener('DOMContentLoaded', recalc, false);
     })(document, window);
+    function updateOrientation(){
+        if(window.orientation == 90 || window.orientation == -90){
+            var v = -window.orientation;
+            $("body").css({
+                'transform':     'rotate('+v+'deg)',
+                '-webkit-transform':'rotate('+v+'deg)',
+                '-moz-transform':'rotate('+v+'deg)',
+                '-o-transform':  'rotate('+v+'deg)'
+            })
+        }
+    }
     $(function(){
         var section = $("#page .section");
         var scrollfullPage = new $.MyScroll();
@@ -221,7 +232,7 @@
 
                 })
 
-                queue1.delay(1500).each(function(i,elem){
+                queue1.delay(800).each(function(i,elem){
                     var dataArr = $(elem).attr("data-rel1").split(",");
                     var L,O;
                     L = (status == "after") ? dataArr[1]:dataArr[0];
