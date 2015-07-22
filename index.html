@@ -8,7 +8,7 @@
     <meta name="x5-orientation" content="portrait">
     <link rel="stylesheet" href="index.css">
 </head>
-<body  onorientationchange="updateOrientation();">
+<body >
 <div id="page">
     <div id="logo"></div>
     <footer id="up">
@@ -89,15 +89,9 @@
         win.addEventListener(resizeEvt, recalc, false);
         doc.addEventListener('DOMContentLoaded', recalc, false);
     })(document, window);
-    function updateOrientation(){
-            var v = -window.orientation;
-            $("body").css({
-                'transform':     'rotate('+v+'deg)',
-                '-webkit-transform':'rotate('+v+'deg)',
-                '-moz-transform':'rotate('+v+'deg)',
-                '-o-transform':  'rotate('+v+'deg)'
-            })
-    }
+    $("body").on("orientationchange",function(){
+        event.stopPropagation();event.cancelBubble = true;
+    })
     $(function(){
         var section = $("#page .section");
         var scrollfullPage = new $.MyScroll();
