@@ -88,7 +88,6 @@
         doc.addEventListener('DOMContentLoaded', recalc, false);
     })(document, window);
     function updateOrientation(){
-        if(window.orientation == 90 || window.orientation == -90){
             var v = -window.orientation;
             $("body").css({
                 'transform':     'rotate('+v+'deg)',
@@ -96,7 +95,6 @@
                 '-moz-transform':'rotate('+v+'deg)',
                 '-o-transform':  'rotate('+v+'deg)'
             })
-        }
     }
     $(function(){
         var section = $("#page .section");
