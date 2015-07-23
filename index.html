@@ -94,13 +94,13 @@
     })(document, window);
     window.addEventListener("onorientationchange" in window ? "orientationchange" : "resize", hengshuping, false);
 
-    function hengshuping() {
-        if (window.orientation == 90 || window.orientation == -90) {
-            $("#mask").show();
-        } else {
-            $("#mask").hide();
-        }
-    }
+//    function hengshuping() {
+//        if (window.orientation == 90 || window.orientation == -90) {
+//            $("#mask").show();
+//        } else {
+//            $("#mask").hide();
+//        }
+//    }
     $(function(){
         var section = $("#page .section");
         var scrollfullPage = new $.MyScroll();
