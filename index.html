@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <title>联创梦享集团官网</title>
     <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-orientation" content="portrait">
     <link rel="stylesheet" href="index.css">
 </head>
 <body >
@@ -97,7 +99,6 @@
         vh = vh<= 480 ? 480:(vh<=568 ? 800:1000);
         console.log(vh)
         scrollfullPage.init({
-            start:2,
             afterFnArr:[oneFn("after"),twoFn("after"),threeFn("after"),function(){alert("44进场")}],
             leaveFnArr:[oneFn("leave"),twoFn("leave"),threeFn("leave"),function(){alert("44出场")}]
         });
