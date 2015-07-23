@@ -73,10 +73,10 @@ html, body,#page{width: 100%;height:100%;min-height:480px;position: relative;ove
 #bigImg3 p{position: absolute;width: 100%;text-align: center;font-size: 1.2rem;color: #333333;top: 10.85rem;left: 10rem;opacity: 0}
 #bigImg3 .item2{font-size: 1.5rem;font-style: italic;top: 8.1rem;left: -10rem;opacity: 0}
 
-.section3 .list1{position:relative;width: 21.3rem;height: 5.1rem;margin: 8px auto;left: -50rem;}
+.section3 .list1{position:relative;width: 21.3rem;height: 5.1rem;margin: 8px auto;left: -50rem;z-index: 1000}
 .section3 .list2{position:relative;width: 30rem;height: 5.1rem;margin: 5px auto;left: 50rem;}
 .section3 .list1 li,.section3 .list2 li{width: 5.1rem;height: 5.1rem;background-repeat:no-repeat;background-size: 100% 100%;float: left;margin-left: 2.9rem;}
-.section3 .list1 li a{display: block;width: 100%;height: 100%;}
+.section3 .list1 li a{display: block;width: 5.1rem;height: 5.1rem;background-color: red}
 .section3 .list1 li:nth-child(1){background-image: url("img/icon1.png");margin-left: 0rem;}
 .section3 .list1 li:nth-child(2){background-image: url("img/icon2.png")}
 .section3 .list1 li:nth-child(3){background-image: url("img/icon3.png")}

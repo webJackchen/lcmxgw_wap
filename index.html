@@ -95,7 +95,7 @@
 </div>
 </body>
 <script type="text/javascript" src="jquery-1.9.1.min.js"></script>
-<script type="text/javascript" src="jq_touch.js"></script>
+<script type="text/javascript" src="scroll.js"></script>
 <script type="text/javascript">
     (function (doc, win) {
         var docEl = doc.documentElement,
@@ -125,6 +125,7 @@
         vh = vh<= 480 ? 480:(vh<=568 ? 800:1000);
 
         scrollfullPage.init({
+            start:2,
             afterFnArr:[oneFn("after"),twoFn("after"),threeFn("after"),fourFn("after")],
             leaveFnArr:[oneFn("leave"),twoFn("leave"),threeFn("leave"),fourFn("leave")]
         });
