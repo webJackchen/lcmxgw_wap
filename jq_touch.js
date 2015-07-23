@@ -27,8 +27,7 @@
             up.fadeIn(8000);
         }
         logo.animate({
-            top:15,
-            left:15
+            top:15
         },1000)
         this.swipe();
     }
