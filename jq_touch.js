@@ -2,7 +2,8 @@
 (function($){
     var doc = $(document),
         section = $("#page .section"),
-        up = $("#up");
+        up = $("#up"),
+        logo = $("#logo");
         nowIndex = 0,
         lastIndex = 0,
         winH = $(window).height(),
@@ -22,6 +23,13 @@
         nowIndex = settings.start;
         section.eq(nowIndex).fadeIn(200);
         settings.afterFnArr[nowIndex]();
+        if(nowIndex != section.length-1){
+            up.fadeIn(8000);
+        }
+        logo.animate({
+            top:22,
+            left:30
+        },1000)
         this.swipe();
     }
     var sp = $.MyScroll;
@@ -79,6 +87,11 @@
                     if( status ){
                         settings.leaveFnArr[lastIndex]();
                         section.eq(lastIndex).fadeOut(1000);
+                        if(nowIndex == section.length-1){
+                            up.hide();
+                        }else{
+                            up.fadeIn(2500);
+                        }
                         section.eq(nowIndex).delay(1000).fadeIn(200,function(){
                             settings.afterFnArr[nowIndex]();
                             status1 = true;
@@ -97,6 +110,11 @@
                     if( status ){
                         settings.leaveFnArr[lastIndex]();
                         section.eq(lastIndex).fadeOut(1000);
+                        if(nowIndex == section.length-1){
+                            up.hide();
+                        }else{
+                            up.fadeIn(2500);
+                        }
                         section.eq(nowIndex).delay(1000).fadeIn(200,function(){
                             settings.afterFnArr[nowIndex]();
                             status1 = true;

@@ -43,8 +43,8 @@
     <div class="section section3">
         <div id="bigImg3" class="bigImg block"  data-rel="40">
             <div class="item1" data-rel="-40rem,4.05rem,0rem,4.05rem"></div>
-            <p class="item2"data-rel="8.1rem,-50rem,8.1rem,0rem">联创梦享企业管理中心</p>
-            <p class="item3"data-rel="10.85rem,50rem,10.85rem,0rem">控股子公司及持股合作公司</p>
+            <p class="item2"data-rel="8.1rem,-80rem,8.1rem,0rem">联创梦享企业管理中心</p>
+            <p class="item3"data-rel="10.85rem,80rem,10.85rem,0rem">控股子公司及持股合作公司</p>
         </div>
         <ul class="queue1 list1 block"  data-rel="8" data-rel1 = "-50rem,0rem">
             <li></li><li></li><li></li>
@@ -73,7 +73,19 @@
         </div>
     </div>
     <div class="section section4">
-
+        <div id="bigImg4" class="bigImg block"  data-rel="40">
+            <div class="item1" data-rel="-50rem,0rem,0rem,0rem"></div>
+        </div>
+        <div class="txt block" data-rel="15">
+            <p class="queue txt1" data-rel="50rem,0rem,0rem,0rem">地址：成都市青羊区顺城大街269号富力中心12楼1208号</p>
+            <p class="queue txt2" data-rel="70rem,4.725rem,7rem,4.725rem">邮编：610014 传真：028-87776962</p>
+            <p class="queue txt3" data-rel="90rem,0rem,9.5rem,0rem">邮箱：service@defshare.org</p>
+        </div>
+        <p class="queue share" data-rel="-110rem,6.375rem,11.25rem,6.375rem">
+            <span class="s1"><a href="http://t.qq.com/defengshangxiang" target="_blank"></a></span>
+            <span class="s2"><a href="http://weibo.com/u/5193152003?sudaref=www.defshare.com" target="_blank"></a></span>
+            <span class="s3"><a href="http://user.qzone.qq.com/2106114530/main" target="_blank"></a></span>
+        </p>
     </div>
 </div>
 </body>
@@ -92,24 +104,24 @@
         win.addEventListener(resizeEvt, recalc, false);
         doc.addEventListener('DOMContentLoaded', recalc, false);
     })(document, window);
-//    window.addEventListener("onorientationchange" in window ? "orientationchange" : "resize", hengshuping, false);
+    window.addEventListener("onorientationchange" in window ? "orientationchange" : "resize", hengshuping, false);
 
-//    function hengshuping() {
-//        if (window.orientation == 90 || window.orientation == -90) {
-//            $("#mask").show();
-//        } else {
-//            $("#mask").hide();
-//        }
-//    }
+    function hengshuping() {
+        if (window.orientation == 90 || window.orientation == -90) {
+            $("#mask").show();
+        } else {
+            $("#mask").hide();
+        }
+    }
     $(function(){
         var section = $("#page .section");
         var scrollfullPage = new $.MyScroll();
         var vh = document.documentElement.clientHeight;
         vh = vh<= 480 ? 480:(vh<=568 ? 800:1000);
-        console.log(vh)
+
         scrollfullPage.init({
-            afterFnArr:[oneFn("after"),twoFn("after"),threeFn("after"),function(){alert("44进场")}],
-            leaveFnArr:[oneFn("leave"),twoFn("leave"),threeFn("leave"),function(){alert("44出场")}]
+            afterFnArr:[oneFn("after"),twoFn("after"),threeFn("after"),fourFn("after")],
+            leaveFnArr:[oneFn("leave"),twoFn("leave"),threeFn("leave"),fourFn("leave")]
         });
 
         function oneFn(status){
@@ -190,7 +202,7 @@
 
                 queue.each(function(j,elem){
                     var dataArr = $(elem).attr("data-rel").split(",");
-                    var T, L;
+                    var T, L,O;
                     T = (status == "after") ? dataArr[2]:dataArr[0];
                     L = (status == "after") ? dataArr[3]:dataArr[1];
                     O = (status == "after") ? 1:0;
@@ -210,8 +222,8 @@
             return (function(){
                 var bigLogo1Img = $("#bigImg3").children();
                 var queue = $(".section3 .queue"),
-                    queue1 = $(".section3 .queue1"),
-                    block = $(".section3 .block");
+                        queue1 = $(".section3 .queue1"),
+                        block = $(".section3 .block");
 
                 block.each(function(i,elem){
                     var T = $(elem).attr("data-rel");
@@ -259,6 +271,49 @@
                         left: L,
                         opacity:O
                     },1500)
+
+                })
+
+            })
+        }
+
+        function fourFn(status){
+            return (function(){
+                var bigLogo1Img = $("#bigImg4 .item1");
+                var bigLogo1ImgDataArr =  bigLogo1Img.eq(0).attr("data-rel").split(",");
+                var queue = $(".section4 .queue"),
+                    block = $(".section2 .block");
+                var T,O;
+
+                block.each(function(i,elem){
+                    var T = $(elem).attr("data-rel");
+                    $(elem).css({
+                        marginTop:(T*vh/480) + "px"
+                    })
+                })
+
+                T = (status == "after") ? bigLogo1ImgDataArr[2]:bigLogo1ImgDataArr[0];
+                O = (status == "after") ?1:0;
+                bigLogo1Img.animate({
+                    top:T,
+                    opacity:O
+                },800)
+                queue.delay(500).each(function(j,elem){
+                    var dataArr =  $(elem).attr("data-rel").split(",");
+                    var T, O;
+                    T = (status == "after") ? dataArr[2]:dataArr[0];
+                    O = (status == "after") ? 1:0;
+                    if( j == 3 ){
+                        $(elem).animate({
+                            bottom: T ,
+                            opacity:O
+                        },1500)
+                    }else{
+                        $(elem).animate({
+                            top: T ,
+                            opacity:O
+                        },1500)
+                    }
 
                 })
 
