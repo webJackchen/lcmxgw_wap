@@ -56,7 +56,7 @@ html, body,#page{width: 100%;height:100%;position: relative;overflow: hidden}
 .section1 .txt4{font-size:1.1rem;bottom: -100rem;opacity: 0}
 
 /*section2 style*/
-#bigImg2{width: 17.4rem;height: 12.1rem;margin: 0 auto;position: relative;margin-top: 61px;}
+#bigImg2{width: 17.4rem;height: 12.1rem;margin: 0 auto;position: relative;margin-top: 40px;}
 #bigImg2 div{position:absolute;width: 12rem;height: 12rem;background-repeat:no-repeat;background-size: 100% 100%;}
 #bigImg2 .item1{background-image: url("img/GIF-2.gif");left: 2.7rem;top:0rem;z-index: 2}
 #bigImg2 .item2{width:12.1rem;height:12.1rem;background-image: url("img/section2_1.png");left: 2.65rem;top:-0.05rem;z-index: 3}
@@ -73,7 +73,7 @@ html, body,#page{width: 100%;height:100%;position: relative;overflow: hidden}
 
 .section3 .list1{position:relative;width: 21.3rem;height: 5.1rem;margin: 8px auto;left: -50rem;}
 .section3 .list2{position:relative;width: 30rem;height: 5.1rem;margin: 5px auto;left: 50rem;}
-.section3 .list1 li,.section3 .list2 li{width: 5.1rem;height: 5.1rem;background-repeat:no-repeat;background-size: 100% 100%;float: left;margin-left: 3rem;}
+.section3 .list1 li,.section3 .list2 li{width: 5.1rem;height: 5.1rem;background-repeat:no-repeat;background-size: 100% 100%;float: left;margin-left: 2.9rem;}
 .section3 .list1 li:nth-child(1){background-image: url("img/icon1.png");margin-left: 0rem;}
 .section3 .list1 li:nth-child(2){background-image: url("img/icon2.png")}
 .section3 .list1 li:nth-child(3){background-image: url("img/icon3.png")}
@@ -88,9 +88,9 @@ html, body,#page{width: 100%;height:100%;position: relative;overflow: hidden}
 .section3 .txt .txt_list2{width: 25.6rem;left: 3.55rem;top:60rem; }
 .section3 .txt .txt_list3{width: 20.6rem;left: 6.05rem;top:80rem; }
 .section3 .txt ul li{font-size: 1.1rem;color: #333333;float: left;}
-.section3 .txt .txt_list1 li{margin-left: 1.2rem;}
+.section3 .txt .txt_list1 li{margin-left: 1.1rem;}
 .section3 .txt .txt_list1 li:nth-child(1){margin-left: 0rem;}
-.section3 .txt .txt_list2 li{margin-left: 1.5rem;}
+.section3 .txt .txt_list2 li{margin-left: 1.4rem;}
 .section3 .txt .txt_list2 li:nth-child(1){margin-left: 0rem;}
-.section3 .txt .txt_list3 li{margin-left: 1.7rem;}
+.section3 .txt .txt_list3 li{margin-left: 1.6rem;}
 .section3 .txt .txt_list3 li:nth-child(1){margin-left: 0rem;}
