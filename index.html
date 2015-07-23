@@ -90,6 +90,7 @@
         doc.addEventListener('DOMContentLoaded', recalc, false);
     })(document, window);
     $("body").on("orientationchange",function(){
+        alert(111)
         event.stopPropagation();event.cancelBubble = true;
     })
     $(function(){
