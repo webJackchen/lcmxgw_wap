@@ -76,7 +76,7 @@ html, body,#page{width: 100%;height:100%;min-height:480px;position: relative;ove
 .section3 .list1{position:relative;width: 21.3rem;height: 5.1rem;margin: 8px auto;left: -50rem;z-index: 1000}
 .section3 .list2{position:relative;width: 30rem;height: 5.1rem;margin: 5px auto;left: 50rem;}
 .section3 .list1 li,.section3 .list2 li{width: 5.1rem;height: 5.1rem;background-repeat:no-repeat;background-size: 100% 100%;float: left;margin-left: 2.9rem;}
-.section3 .list1 li a{display: block;width: 5.1rem;height: 5.1rem;background-color: red}
+.section3 .list1 li a{display: block;width: 5.1rem;height: 5.1rem;}
 .section3 .list1 li:nth-child(1){background-image: url("img/icon1.png");margin-left: 0rem;}
 .section3 .list1 li:nth-child(2){background-image: url("img/icon2.png")}
 .section3 .list1 li:nth-child(3){background-image: url("img/icon3.png")}

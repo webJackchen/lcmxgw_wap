@@ -57,7 +57,9 @@
         function touchSatrtFunc(evt) {
             try
             {
-                evt.preventDefault(); //阻止触摸时浏览器的缩放、滚动条滚动等
+                if(evt.target.tagName.toLowerCase() != "a"){
+                    evt.preventDefault(); //阻止触摸时浏览器的缩放、滚动条滚动等
+                }
                 var touch = evt.touches[0]; //获取第一个触点
                 var y = Number(touch.pageY); //页面触点Y坐标
                 startY = y;
@@ -69,7 +71,9 @@
         function touchMoveFunc(evt) {
             try
             {
-                evt.preventDefault(); //阻止触摸时浏览器的缩放、滚动条滚动等
+                if(evt.target.tagName.toLowerCase() != "a"){
+                    evt.preventDefault(); //阻止触摸时浏览器的缩放、滚动条滚动等
+                }
                 var touch = evt.touches[0]; //获取第一个触点
                 var y = Number(touch.pageY); //页面触点Y坐标
                 //判断滑动方向
@@ -127,7 +131,9 @@
         }
         function touchEndFunc(evt) {
             try {
-                evt.preventDefault(); //阻止触摸时浏览器的缩放、滚动条滚动等
+                if(evt.target.tagName.toLowerCase() != "a"){
+                    evt.preventDefault(); //阻止触摸时浏览器的缩放、滚动条滚动等
+                }
             }
             catch (e) {
                 alert('touchEndFunc：' + e.message);

@@ -109,6 +109,7 @@
         win.addEventListener(resizeEvt, recalc, false);
         doc.addEventListener('DOMContentLoaded', recalc, false);
     })(document, window);
+
     window.addEventListener("onorientationchange" in window ? "orientationchange" : "resize", hengshuping, false);
 
     function hengshuping() {
