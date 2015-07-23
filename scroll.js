@@ -40,9 +40,9 @@
         isTouchDevice();
         //绑定事件
         function bindEvent() {
-            document.addEventListener('touchstart', touchSatrtFunc, false);
-            document.addEventListener('touchmove', touchMoveFunc, false);
-            document.addEventListener('touchend', touchEndFunc, false);
+            addEvent(document,'touchstart', touchSatrtFunc);
+            addEvent(document,'touchmove', touchMoveFunc);
+            addEvent(document,'touchend', touchEndFunc);
         }
         //判断是否支持触摸事件
         function isTouchDevice() {
@@ -137,6 +137,13 @@
             }
             catch (e) {
                 alert('touchEndFunc：' + e.message);
+            }
+        }
+        function addEvent(obj,event,fn){
+            if( document.addEventListener ){
+                obj.addEventListener(event,fn,false);
+            }else{
+                attachEvent("on" + event,fn);
             }
         }
     }
