@@ -7,6 +7,9 @@
     <meta name="screen-orientation" content="portrait">
     <meta name="x5-orientation" content="portrait">
     <script type="text/javascript">
+        if (!navigator.userAgent.match(/mobile/i)) {
+            window.location.href = "http://webjackchen.github.io/lcmxgw/";
+        }
         (function (doc, win) {
             var docEl = doc.documentElement,
                     resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
