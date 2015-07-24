@@ -103,9 +103,9 @@ html, body,#page{width: 100%;height:100%;min-height:480px;position: relative;ove
 #bigImg4 .item1{position:absolute;width: 12.25rem;height: 12.35rem;top:-50rem;background-image: url("img/section4_1.png");background-repeat:no-repeat;background-size: 100% 100%;}
 
 .section4 .txt{position:relative;width: 32.1rem;height: 7.55rem;margin:15px auto 0;}
-.section4 .txt p{position: absolute;text-align: center;line-height:2.45rem;font-size:1.3rem;}
+.section4 .txt p{position: absolute;text-align: center;line-height:2.45rem;font-size:1.8rem;}
 .section4 .txt .txt1{font-size: 1.8rem;top: 50rem;}
-.section4 .txt .txt2{width: 22.65rem;top:70rem;left: 4.725rem;}
+.section4 .txt .txt2{width: 31.05rem;top:70rem;left: 0.525rem;}
 .section4 .txt .txt3{width:100%;top:90rem;}
 
 .section4 .share{position:absolute;width: 23.25rem;left: 6.375rem;bottom: -110rem;}
