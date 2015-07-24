@@ -123,7 +123,7 @@
         var section = $("#page .section");
         var scrollfullPage = new $.MyScroll();
         var vh = document.documentElement.clientHeight;
-        vh = vh<= 480 ? 480:(vh<=568 ? 800:1000);
+        vh = vh<= 480 ? 480:(vh<=568 ? 1000:1300);
 
         scrollfullPage.init({
             afterFnArr:[oneFn("after"),twoFn("after"),threeFn("after"),fourFn("after")],
