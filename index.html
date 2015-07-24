@@ -6,6 +6,20 @@
     <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta name="screen-orientation" content="portrait">
     <meta name="x5-orientation" content="portrait">
+    <script type="text/javascript">
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+                    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                    recalc = function () {
+                        var clientWidth = docEl.clientWidth;
+                        if (!clientWidth) return;
+                        docEl.style.fontSize = 20 * (clientWidth / 720) + 'px';
+                    };
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
     <link rel="stylesheet" href="index.css">
 </head>
 <body >
@@ -52,9 +66,9 @@
             <li><a href="http://www.7g7y.com/" target="_blank"></a></li>
         </ul>
         <ul class="queue1 list2 block"  data-rel="10" data-rel1 = "50rem,0rem">
+            <li><a href="http://www.aipuju.com/Home/" target="_blank"></a></li>
             <li><a href="http://www.dsecet.com/" target="_blank"></a></li>
             <li><a href="http://www.qhetao.com/Home/Index/" target="_blank"></a></li>
-            <li><a href="http://www.aipuju.com/Home/" target="_blank"></a></li>
             <li><a target="_blank"></a></li>
         </ul>
         <div class="txt block"  data-rel="15">
@@ -97,19 +111,6 @@
 <script type="text/javascript" src="jquery-1.9.1.min.js"></script>
 <script type="text/javascript" src="scroll.js"></script>
 <script type="text/javascript">
-    (function (doc, win) {
-        var docEl = doc.documentElement,
-                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
-                recalc = function () {
-                    var clientWidth = docEl.clientWidth;
-                    if (!clientWidth) return;
-                    docEl.style.fontSize = 20 * (clientWidth / 720) + 'px';
-                };
-        if (!doc.addEventListener) return;
-        win.addEventListener(resizeEvt, recalc, false);
-        doc.addEventListener('DOMContentLoaded', recalc, false);
-    })(document, window);
-
     window.addEventListener("onorientationchange" in window ? "orientationchange" : "resize", hengshuping, false);
 
     function hengshuping() {
