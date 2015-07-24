@@ -30,6 +30,7 @@
             top:15
         },1000)
         this.swipe();
+        this.handclick();
     }
     var sp = $.MyScroll;
     $.MyScroll.prototype.swipe = function(){
@@ -57,7 +58,8 @@
         function touchSatrtFunc(evt) {
             try
             {
-                if(evt.target.tagName.toLowerCase() != "a"){
+                console.log(evt.target.tagName.toLowerCase())
+                if(evt.target.tagName.toLowerCase() != "a"&& evt.target.tagName.toLowerCase() != "img"){
                     evt.preventDefault(); //阻止触摸时浏览器的缩放、滚动条滚动等
                 }
                 var touch = evt.touches[0]; //获取第一个触点
@@ -71,7 +73,7 @@
         function touchMoveFunc(evt) {
             try
             {
-                if(evt.target.tagName.toLowerCase() != "a"){
+                if(evt.target.tagName.toLowerCase() != "a" && evt.target.tagName.toLowerCase() != "img"){
                     evt.preventDefault(); //阻止触摸时浏览器的缩放、滚动条滚动等
                 }
                 var touch = evt.touches[0]; //获取第一个触点
@@ -131,7 +133,7 @@
         }
         function touchEndFunc(evt) {
             try {
-                if(evt.target.tagName.toLowerCase() != "a"){
+                if(evt.target.tagName.toLowerCase() != "a"&& evt.target.tagName.toLowerCase() != "img"){
                     evt.preventDefault(); //阻止触摸时浏览器的缩放、滚动条滚动等
                 }
             }
@@ -146,6 +148,32 @@
                 attachEvent("on" + event,fn);
             }
         }
+    }
+    $.MyScroll.prototype.handclick = function(){
+        var goUp = up.find("img");
+        goUp.on("touchstart",function(){
+            lastIndex = nowIndex;
+            if(nowIndex == section.length-1){
+                status = false;
+                status1 = true;
+            }else{
+                status = true;
+                nowIndex ++;
+            }
+            if( status ){
+                settings.leaveFnArr[lastIndex]();
+                section.eq(lastIndex).fadeOut(1000);
+                if(nowIndex == section.length-1){
+                    up.hide();
+                }else{
+                    up.fadeIn(2500);
+                }
+                section.eq(nowIndex).delay(1000).fadeIn(200,function(){
+                    settings.afterFnArr[nowIndex]();
+                    status1 = true;
+                })
+            }
+        })
     }
 })($)
 
