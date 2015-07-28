@@ -92,9 +92,9 @@ html, body,#page{width: 100%;height:100%;min-height:480px;position: relative;ove
 .section3 .txt .txt_list1{width: 15rem;left: 0.675rem;top: 40rem;}
 .section3 .txt div span{display: inline-block;font-size: 0.55rem;}
 .section3 .txt div .justify_fix{display:inline-block; width:100%; height:0; overflow:hidden;}
-.section3 .txt .txt_list2{width: 15rem;left: 0.675rem;top:60rem; }
-.section3 .txt .txt_list3{width: 12.3rem;left: 2.025rem;top:80rem; }
-.section3 .txt .txt_list4{width: 10.3rem;left: 3.025rem;top:80rem; }
+.section3 .txt .txt_list2{width: 14rem;left: 1.175rem;top:60rem; }
+.section3 .txt .txt_list3{width: 11.3rem;left: 2.525rem;top:80rem; }
+.section3 .txt .txt_list4{width: 9.3rem;left: 3.525rem;top:80rem; }
 
 /*section4 style*/
 #bigImg4{width: 6.125rem;height: 6.175rem;margin: 0 auto;position: relative;margin-top: 50px;}
